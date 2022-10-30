@@ -1,5 +1,3 @@
-#define _GLIBCXX_USE_CXX11_ABI 1
-
 #include <string>
 
 #include "ssp.h"

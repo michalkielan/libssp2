@@ -9,6 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Patch so
+        run: |
+          cd lib/linux_x64
+          patchelf --set-soname libssp.so libssp.so
+
       - name: Build
         run: |
-          make
+          mkdir build && cd build
