@@ -1,11 +1,15 @@
+#define _GLIBCXX_USE_CXX11_ABI 1
+
 #include <string>
+
+#include "ssp.h"
 
 #include "imf/ssp/sspclient.h"
 #include "imf/net/loop.h"
 
-extern "C" imf::Loop *create_loop_class() { return new imf::Loop(); }
+imf::Loop *create_loop_class() { return new imf::Loop(); }
 
-extern "C" imf::SspClient *create_ssp_class(const std::string &ip,
+imf::SspClient *create_ssp_class(const std::string &ip,
                                             imf::Loop *loop, size_t bufSize,
                                             unsigned short port,
                                             uint32_t streamStyle) {
